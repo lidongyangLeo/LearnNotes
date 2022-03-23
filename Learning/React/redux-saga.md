@@ -1,0 +1,5 @@
+## redux-saga
+
+- takeEvery 
+- takeLatest 
+- 
