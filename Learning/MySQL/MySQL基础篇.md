@@ -1,5 +1,7 @@
 ## MySQL 基础篇
 
+[TOC]
+
 #### 数据库概念
 
 - 数据库
@@ -21,39 +23,31 @@
 特点：
 
 1. 使用表存储数据，格式统一，便于维护
-2. 使用SQL语言操作，标准统一，使用方便
+2. 使用 SQL 语言操作，标准统一，使用方便
 
-
-
-数据模型： 
-
-
-
-
-
-
+数据模型：
 
 ## SQL
 
 #### SQL 通用语法
 
 1. SQL 语句可以单行或多行书写，以分好结尾。
-2. SQL语句可以使用空格/缩进来增强语句的可读性。
-3. MySQL数据库的SQL 语句不区分大小写，关键字建议使用大写。
+2. SQL 语句可以使用空格/缩进来增强语句的可读性。
+3. MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
 4. 注释：
-   1. 单行注释： -- 注释内容或#注释内容（MySQL特有）
-   2. 多行注释： /* 注释内容*/
+   1. 单行注释： -- 注释内容或#注释内容（MySQL 特有）
+   2. 多行注释： /_ 注释内容_/
 
 #### SQL 分类
 
-- DDL 
+- DDL
 
-  - Data Definition language 
+  - Data Definition language
   - 数据库定义语言，用来定义数据库对象（数据库，表，字段）
 
 - DML
 
-  - Data Manipulation language 
+  - Data Manipulation language
   - 数据库操作语言，用来对数据库表中的数据进行增删改
 
 - DQL
@@ -66,45 +60,39 @@
   - Data Control language
   - 数据控制语言，用来创建数据库用户，控制数据库的访问权限
 
-  
-
 #### DDL
 
- - 查询
+- 查询
 
-   - 查询所有数据库
+  - 查询所有数据库
 
-     ```sql
-     SHOW DATABASES;
-     ```
+    ```sql
+    SHOW DATABASES;
+    ```
 
-   - 查询当前数据库
+  - 查询当前数据库
 
-     ```sql
-     SELECT DATABASE();
-     ```
+    ```sql
+    SELECT DATABASE();
+    ```
 
- - 创建
+- 创建
 
-   ```sql
-   CREATE DATABASE [IF NOT EXISTS]数据库名 [DEFAULT CHARSET 字符集][COLLATE 排序规则];
-   ```
+  ```sql
+  CREATE DATABASE [IF NOT EXISTS]数据库名 [DEFAULT CHARSET 字符集][COLLATE 排序规则];
+  ```
 
-   
+- 删除
 
- - 删除
+  ```sql
+  DROP DATABASE [IF EXISTS] 数据库名;
+  ```
 
-   ```sql
-   DROP DATABASE [IF EXISTS] 数据库名;
-   ```
+- 使用
 
- - 使用
-
-   ```sql
-   USE 数据库名;
-   ```
-
-
+  ```sql
+  USE 数据库名;
+  ```
 
 #### DDL 表查询
 
@@ -137,9 +125,9 @@ CREATE TABLE 表名 （
 
 #### DDL 表操作 数据类型
 
-- 数值类型 
+- 数值类型
 
-  ![截屏2023-02-12 下午1.42.27](/Users/lidongyang/Library/Application Support/typora-user-images/截屏2023-02-12 下午1.42.27.png)
+  ![截屏2023-02-12 下午1.42.27](/Users/lidongyang/Library/Application Support/typora-user-images/截屏 2023-02-12 下午 1.42.27.png)
 
 - 字符串类型
 
@@ -156,7 +144,7 @@ CREATE TABLE 表名 （
   LONGTEXT  极大文本数据
   ```
 
-  ![截屏2023-02-12 下午1.45.10](/Users/lidongyang/Library/Application Support/typora-user-images/截屏2023-02-12 下午1.45.10.png)
+  ![截屏2023-02-12 下午1.45.10](/Users/lidongyang/Library/Application Support/typora-user-images/截屏 2023-02-12 下午 1.45.10.png)
 
 - 日期时间类型
 
@@ -165,12 +153,10 @@ CREATE TABLE 表名 （
   TIME   -838:59:59至838:59:59 HH:MM:SS 时间值或持续时间
   YEAR   1901至2155            YYYY  年份值
   DATETIME  1000-01-01 00:00:00 至9999-12-31 23:59:59  YYYY-MM-DD HH:MM:SS  混合日期和时间值
-  TIMESTAMP  1970-01-01 00:00:01 至2038-01-19 03:14:07  YYYY-MM-DD HH:MM:SS 混合日期和时间值 时间戳 
+  TIMESTAMP  1970-01-01 00:00:01 至2038-01-19 03:14:07  YYYY-MM-DD HH:MM:SS 混合日期和时间值 时间戳
   ```
 
-  ![截屏2023-02-12 下午1.46.11](/Users/lidongyang/Library/Application Support/typora-user-images/截屏2023-02-12 下午1.46.11.png)
-
-
+  ![截屏2023-02-12 下午1.46.11](/Users/lidongyang/Library/Application Support/typora-user-images/截屏 2023-02-12 下午 1.46.11.png)
 
 #### DDL 表操作 修改
 
@@ -254,8 +240,6 @@ DML 英文全称是 Data Manipulation language（数据操作语言）用来对�
     INSERT INTO 表名 VALUES(值1,值2,...),(值1,值2,...),(值1,值2,...);
     ```
 
-    
-
 - 修改数据（UPDATE）
 
   ```sql
@@ -272,8 +256,8 @@ DML 英文全称是 Data Manipulation language（数据操作语言）用来对�
 
   注意：
 
-  - DELETE语句的条件可以有，也可以没有，如果没有条件，则会删除整张表的所有数据。
-  - DELETE语句不能删除某一个字段的值(可以使用UPDATE)。
+  - DELETE 语句的条件可以有，也可以没有，如果没有条件，则会删除整张表的所有数据。
+  - DELETE 语句不能删除某一个字段的值(可以使用 UPDATE)。
 
 #### DQL
 
@@ -282,9 +266,9 @@ Data Query language（数据查询语言），数据查询语言，用来查询�
 查询关键字： SELECT
 
 ```sql
-SELECT 
+SELECT
 	字段列表
-FROM 
+FROM
 	表名列表
 WHERE
 	条件列表
@@ -322,8 +306,6 @@ LIMIT
     SELECT DISTINCT 字段列表 FROM 表名;
     ```
 
-    
-
 - 条件查询（WHERE）
 
   1. 语法
@@ -340,10 +322,10 @@ LIMIT
      4. `<=` 小于等于
      5. `=` 等于
      6. `<> 或 !=` 不等于
-     7. `BETWEEN...ADN...`  在某个范围之内(含最小, 最大值)
-     8. `IN(...)` 在in之后的列表中的值，多选一
-     9. `LIKE 占位符` 模糊匹配(_匹配单个字符, %匹配任意个字符)
-     10. `IS NULL` 是NULL
+     7. `BETWEEN...ADN...` 在某个范围之内(含最小, 最大值)
+     8. `IN(...)` 在 in 之后的列表中的值，多选一
+     9. `LIKE 占位符` 模糊匹配(\_匹配单个字符, %匹配任意个字符)
+     10. `IS NULL` 是 NULL
      11. `AND 或 &&` 并且(多个条件同时成立)
      12. `OR 或||` 或者(多个条件任意一个成立)
      13. `NOT 或 ！` 非，不是
@@ -366,7 +348,7 @@ LIMIT
      SELECT 聚合函数（字段列表）FROM 表名;
      ```
 
-     注意： null值不参与所有聚合函数运算
+     注意： null 值不参与所有聚合函数运算
 
 - 分组查询（GROUP BY）
 
@@ -376,17 +358,17 @@ LIMIT
      SELECT 字段列表 FROM 表名 [WHERE 条件] GROUP BY 分组字段名 [HAVING  分组后过滤条件];
      ```
 
-  2. Where 与having 区别
+  2. Where 与 having 区别
 
-     1. 执行时机不同： where 是分组之前进行过滤，不满足where条件，不参与分组；而having 是分组之后对结果进行过滤。
-     2. 判断条件不同：where不能对聚合函数进行判断, 而having可以。 
+     1. 执行时机不同： where 是分组之前进行过滤，不满足 where 条件，不参与分组；而 having 是分组之后对结果进行过滤。
+     2. 判断条件不同：where 不能对聚合函数进行判断, 而 having 可以。
 
   注意：
 
   - 执行属性： where > 聚合函数 > having；
   - 分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义。
 
-- 排序查询  (ORDER BY)
+- 排序查询 (ORDER BY)
 
   1. 语法
 
@@ -411,35 +393,35 @@ LIMIT
 
   注意：
 
-  - 起始索引从0开始，起始索引 = （查询页码 - 1）* 每页显示记录数。
-  - 分页查询是数据库的方言，不同的数据库有不同的实现，MySQL中是LIMIT;
-  - 如果查询的是第一页数据,起始索引可以省略,直接简写为limit 10。
+  - 起始索引从 0 开始，起始索引 = （查询页码 - 1）\* 每页显示记录数。
+  - 分页查询是数据库的方言，不同的数据库有不同的实现，MySQL 中是 LIMIT;
+  - 如果查询的是第一页数据,起始索引可以省略,直接简写为 limit 10。
 
   ```sql
   1. 查询年龄为20，21,22,23岁的女性员工信息。
   SELECT * from emp where age in(20,21,22,23) and gender = "女";
-  
+
   2.查询性别为男，并且年龄在20-40岁(含)以内的姓名为三个字的员工。
   SELECT * from emp where gender = "男" and age between 20 and 40 and name like'_ _ _';
-  
+
   3. 统计员工表中，年龄小于60岁的，男性员工和女性员工的人数.
   SELECT gender, count(*) from emp where age <= 60 group by gender ;
-  
+
   4. 查询所有年龄小于等于35岁员工的姓名和年龄，并对查询结果按年龄升序排序，如果年龄相同按入职时间降序排序。
   SELECT name,age from emp where age <= 35 order by age, entrydata desc;
-  
+
   5. 查询性别为男，且年龄在20-40岁(含)以内的前5个员工信息，对查询的结果按年龄升序排序，年龄相同按入职时间升序排序。
   SELECT * from emp where gender = '男' and between 20 and 40 order by age asc, entrydata asc limit 5 ;
   ```
 
   #### DQL 执行顺序
-  
+
   - 编写顺序
-  
+
   ```sql
-  SELECT 
+  SELECT
   	字段列表
-  FROM 
+  FROM
   	表名列表
   WHERE
   	条件列表
@@ -452,31 +434,29 @@ LIMIT
   LIMIT
   	分页参数
   ```
-  
+
   - 执行顺序
-  
-    ```sql 
-    FROM 
+
+    ```sql
+    FROM
     	表名列表
-    WHERE 
+    WHERE
     	条件列表
     GROUP BY
     	分组字段列表
-    HAVING 
+    HAVING
     	分组后条件列表
-    SELECT 
+    SELECT
     	字段列表
     ORDER BY
     	排序字段列表
     LIMIT
     	分页参数
     ```
-  
-    
 
 #### DCL
 
- Data Control language (数据控制语言)，用来管理数据库用户，控制数据库的访问权限。
+Data Control language (数据控制语言)，用来管理数据库用户，控制数据库的访问权限。
 
 #### DCL 管理用户
 
@@ -508,22 +488,20 @@ LIMIT
    注意：
 
    - 主机名可以使用%通配。
-   - 这类SQL开发人员操作的比较少，主要是DBA（Database Administratior 数据库管理员）使用。
+   - 这类 SQL 开发人员操作的比较少，主要是 DBA（Database Administratior 数据库管理员）使用。
 
-#### DCL 权限控制 
+#### DCL 权限控制
 
-MySQL中定义了很多种权限，但是常用的就是以下几种：
+MySQL 中定义了很多种权限，但是常用的就是以下几种：
 
-- ALL， ALL PRIVILEGES  所有权限
-- SELECT  查询权限
+- ALL， ALL PRIVILEGES 所有权限
+- SELECT 查询权限
 - INSERT 插入数据
 - UPDATE 修改数据
 - DELETE 删除数据
 - ALTER 修改表
 - DROP 删除数据库/表/视图
-- CREATE  创建数据库/表
-
-
+- CREATE 创建数据库/表
 
 1. 查询权限
 
@@ -543,14 +521,10 @@ GRANT 权限列表 ON 数据库名.表名 TO '用户名'@'主机名';
 REVOKE 权限列表 ON 数据库名.表名 FROM '用户名'@'主机名';
 ```
 
-
-
 注意：
 
 - 多个权限之间，使用逗号分隔
-- 授权时，数据库名和表名可以使用*进行通配，代表所有。
-
-
+- 授权时，数据库名和表名可以使用\*进行通配，代表所有。
 
 ## 函数
 
@@ -560,25 +534,21 @@ REVOKE 权限列表 ON 数据库名.表名 FROM '用户名'@'主机名';
 SELECT 函数(参数);
 ```
 
-
-
 #### 字符串函数
 
-MySQL中内置了很多字符串函数，常用的几个如下：
+MySQL 中内置了很多字符串函数，常用的几个如下：
 
-- CONCAT(S1,S2,S3,...Sn);     字符串拼接，将S1,S2,...Sn拼接成一个字符串。
-- LOWER(str)  将字符串str全部转为小写
-- UPPER(str) 将字符串str 全部转为大写
-- LPAD(str,n,pad)  左填充，用字符串pad对str的左边进行填充，达到n个字符串长度。
-- RPAD(str,n,pad) 右填充，用字符串pad对str的右边进行填充，达到n个字符串长度。
+- CONCAT(S1,S2,S3,...Sn); 字符串拼接，将 S1,S2,...Sn 拼接成一个字符串。
+- LOWER(str) 将字符串 str 全部转为小写
+- UPPER(str) 将字符串 str 全部转为大写
+- LPAD(str,n,pad) 左填充，用字符串 pad 对 str 的左边进行填充，达到 n 个字符串长度。
+- RPAD(str,n,pad) 右填充，用字符串 pad 对 str 的右边进行填充，达到 n 个字符串长度。
 - TRIM(str) 去掉字符串头部和尾部的空格
-- SUBSTRING(str,start,len)  返回字符串str 从start位置起的len个长度的字符串。
+- SUBSTRING(str,start,len) 返回字符串 str 从 start 位置起的 len 个长度的字符串。
 
 ```sql
 SELECT 函数(参数);
 ```
-
-
 
 #### 数值函数
 
@@ -586,9 +556,9 @@ SELECT 函数(参数);
 
 - CEIL(x) 向上取整
 - FLOOR(x) 向下取整
-- MOD(x,y) 返回x/y的模
-- RAND()返回0-1内的随机数
-- ROUND(x,y) 求参数x的四舍五入的值，保留y位小数
+- MOD(x,y) 返回 x/y 的模
+- RAND()返回 0-1 内的随机数
+- ROUND(x,y) 求参数 x 的四舍五入的值，保留 y 位小数
 
 练习：
 
@@ -598,31 +568,27 @@ SELECT 函数(参数);
 select lpad(round(rand() * 1000000, 0), 6, '0');
 ```
 
-
-
 #### 日期函数
 
 常见的日期函数：
 
-- CURDATE()  返回当前日期
+- CURDATE() 返回当前日期
 - CURTIME() 返回当前时间
-- NOW()  返回当前日期和时间
-- YEAR(date) 获取指定date的年份
-- MONTH(date) 获取指定date的月份
-- DAY(date) 获取指定date的日期
-- DATE_ADD(date, INTERVAL expr type) 返回一个日期/时间值加上一个时间间隔expr后的时间值
-- DATEDIFF(date1, date2) 返回起始时间date1和结束时间date2之间的天数
+- NOW() 返回当前日期和时间
+- YEAR(date) 获取指定 date 的年份
+- MONTH(date) 获取指定 date 的月份
+- DAY(date) 获取指定 date 的日期
+- DATE_ADD(date, INTERVAL expr type) 返回一个日期/时间值加上一个时间间隔 expr 后的时间值
+- DATEDIFF(date1, date2) 返回起始时间 date1 和结束时间 date2 之间的天数
 
 #### 流程函数
 
-流程函数也是很常用的一类函数，可以在SQL语句中实现条件筛选，从而提高语句的效率。
+流程函数也是很常用的一类函数，可以在 SQL 语句中实现条件筛选，从而提高语句的效率。
 
-- IF(value, t, f)  如果value为true,则返回t, 否则返回f
-- IFNULL(value1, value2) 如果value1不为空，返回value1,否则返回value2
-- CASE WHEN [val1] THEN [res1] ... ELSE [default] END  如果val1为true,返回res1,....否则返回default默认值
-- CASE [expr] WHEN [val1] THEN [res1].... ELSE[default] END  如果expr的值等于val1，返回res1，...否则返回defalut默认值。
-
-
+- IF(value, t, f) 如果 value 为 true,则返回 t, 否则返回 f
+- IFNULL(value1, value2) 如果 value1 不为空，返回 value1,否则返回 value2
+- CASE WHEN [val1] THEN [res1] ... ELSE [default] END 如果 val1 为 true,返回 res1,....否则返回 default 默认值
+- CASE [expr] WHEN [val1] THEN [res1].... ELSE[default] END 如果 expr 的值等于 val1，返回 res1，...否则返回 defalut 默认值。
 
 ## 约束
 
@@ -643,8 +609,6 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
    ```
 
    AUTO_INCREMENT 自动增长
-
-   
 
 #### 外键约束
 
@@ -676,10 +640,10 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
 
 - 删除/更新行为
 
-  - NO ACTION  当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键，如果有则不允许删除/更新。（与RESTRICT一致）
-  - RESTRICT 当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键,如果有则不允许删除/更新。（与NO ACTION一致）
+  - NO ACTION 当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键，如果有则不允许删除/更新。（与 RESTRICT 一致）
+  - RESTRICT 当在父表中删除/更新对应记录时，首先检查该记录是否有对应外键,如果有则不允许删除/更新。（与 NO ACTION 一致）
   - CASCADE 当在父表中删除/更新对应记录时,首先检查该记录是否有对应外键,如果有,则也删除/更新外键在子表中的记录。
-  - SET NULL 当在父表中删除对应记录时，首先检查该记录是否有对应外键，如果有则设置子表中该外键值为null(这就要求该外键允许取null)
+  - SET NULL 当在父表中删除对应记录时，首先检查该记录是否有对应外键，如果有则设置子表中该外键值为 null(这就要求该外键允许取 null)
   - SET DEFAULT 父表有变更时，子表将外键列设置成一个默认的值（Innodb 不支持）
 
   语法：
@@ -687,8 +651,6 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
   ```sql
   ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY(外键字段)REFERENCES 主表名(主表字段名) ON UPDATE CASCADE ON DELETE CASCADE;
   ```
-
-  
 
 ## 多表查询
 
@@ -704,10 +666,6 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
 
   - 实现： 在多的一方建立外键，指向一的一方的主键
 
-    
-
-
-
 - 多对多
 
   - 案例： 学生与课程的关系
@@ -715,8 +673,6 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
   - 关系： 一个学生可以选修多门课程，一门课程也可以供多个学生选择
 
   - 实现：建立第三张中间表，中间表至少包含两个外键，分别关联两方主键。
-
-    
 
 - 一对一
 
@@ -730,7 +686,7 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
 
 多表查询-- 笛卡尔积
 
-笛卡尔积：笛卡尔积乘积是指在数学中，两个集合 A集合和B集合的所有组合情况。（在多表查询时，需要消除无效的笛卡尔积）
+笛卡尔积：笛卡尔积乘积是指在数学中，两个集合 A 集合和 B 集合的所有组合情况。（在多表查询时，需要消除无效的笛卡尔积）
 
 语法
 
@@ -738,12 +694,10 @@ select lpad(round(rand() * 1000000, 0), 6, '0');
 SELECT * FROM 表1,表2 where 表1.关联的column = 表2.关联的column；
 ```
 
-
-
 ##### 多表查询分类
 
 - 连接查询
-  - 内连接： 相当于查询A，B交集部分数据
+  - 内连接： 相当于查询 A，B 交集部分数据
   - 外连接：
     - 左外连接： 查询左表所有数据，以及两张表交集部分数据
     - 右外连接： 查询右表所有数据，以及两张表交集部分数据
@@ -752,7 +706,7 @@ SELECT * FROM 表1,表2 where 表1.关联的column = 表2.关联的column；
 
 #### 内连接
 
- 内连接查询的是两张表交集的部分
+内连接查询的是两张表交集的部分
 
 - 隐式内连接
 
@@ -770,7 +724,7 @@ SELECT * FROM 表1,表2 where 表1.关联的column = 表2.关联的column；
 
 - 左外连接
 
-  - 相当于查询表1（左表）的所有数据包含表1和表2交集部分的数据。
+  - 相当于查询表 1（左表）的所有数据包含表 1 和表 2 交集部分的数据。
 
   ```sql
   SELECT 字段列表 FROM 表1 LEFT [OUTER] JOIN 表2 ON 条件...;
@@ -778,13 +732,11 @@ SELECT * FROM 表1,表2 where 表1.关联的column = 表2.关联的column；
 
 - 右外连接
 
-  - 相当于查询表2（右表）的所有数据包含表1和表2交集部分的数据。
+  - 相当于查询表 2（右表）的所有数据包含表 1 和表 2 交集部分的数据。
 
   ```sql
   SELECT 字段列表 FROM 表1 RIGHT [OUTER] JOIN 表2 ON 条件...;
   ```
-
-  
 
 #### 自连接
 
@@ -796,11 +748,9 @@ SELECT 字段列表 FROM 表A 别名A JOIN 表A 别名B ON 条件...;
 
 自连接查询，可以是内连接查询，也可以是外连接查询。
 
-
-
 #### 联合查询 union, union all
 
-对于union查询，就是把多次查询的结果合并起来，形成一个新的查询结果集。
+对于 union 查询，就是把多次查询的结果合并起来，形成一个新的查询结果集。
 
 ```sql
 SELECT 字段列表 FROM 表A ...
@@ -814,11 +764,11 @@ SELECT 字段列表 FROM 表B...;
 注意：
 
 - 对于联合查询的多张表的列数必须保持一致，字段类型也需要保持一致。
-- UNION ALL 是直接将两个查询结果合并，UNION是将两个查询结果合并并且去重。
+- UNION ALL 是直接将两个查询结果合并，UNION 是将两个查询结果合并并且去重。
 
 #### 子查询
 
-- 概念： SQL语句中嵌套SELECT语句，称为嵌套查询，又称子查询
+- 概念： SQL 语句中嵌套 SELECT 语句，称为嵌套查询，又称子查询
 
   ```sql
   SELECT * FROM t1 WHERE column = (SELECT column1 FROM t2);
@@ -833,7 +783,7 @@ SELECT 字段列表 FROM 表B...;
   - 行子查询（子查询结果为一行）
   - 表子查询（子查询结果为多行多列）
 
-- 根据子查询位置，分为：WHERE之后、FROM之后、SELECT之后。
+- 根据子查询位置，分为：WHERE 之后、FROM 之后、SELECT 之后。
 
 #### 多表查询案例
 
@@ -844,10 +794,134 @@ SELECT 字段列表 FROM 表B...;
   - 常用的操作符：`= <> > >= < <=`
 
 - 列子查询
+
   - 子查询返回的结果是一列（可以是多行），这种子查询成为列子查询。
   - 常用的操作符： `IN、NOT IN、ANY、SOME、ALL`
     - IN 在指定的集合范围之内，多选一
     - NOT IN 不在指定的集合范围之内
     - ANY 子查询返回列表中，有任意一个满足即可
-    - SOME 与ANY 等同，使用SOME的地方都可以使用ANY
+    - SOME 与 ANY 等同，使用 SOME 的地方都可以使用 ANY
     - ALL 子查询返回列表的所有值都必须满足
+
+- 行子查询
+
+  子查询返回的结果是一行（可以是多行），这种子查询称为行子查询。
+
+  常用的操作符： `=、<>、IN、NOT IN`
+
+- 表子查询
+
+  子查询返回的结果是多行多列，这种子查询称为表子查询。
+
+  常用的操作符： `IN`
+
+## 事务
+
+#### 事务简介
+
+事务是一组操作的集合，它是一个不可分割的工作单位，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。
+
+注意：
+
+默认 MySQL 的事务是自动提交的，也就是说，当执行一条 DML 语句，MySQL 会立即隐式的提交事务。
+
+#### 事务操作
+
+- 查看/设置事务提交方式
+
+  ```sql
+  SELECT @@autocommit;
+  ```
+
+  1: 自动
+
+  0: 手动
+
+  ```sql
+  SET @@autocommit = 0; -- 设置为手动提交
+  ```
+
+- 提交事务
+
+  ```sql
+  COMMIT;
+  ```
+
+- 回滚事务
+
+  ```sql
+  ROLLBACK;
+  ```
+
+- 开启事务
+
+  ```sql
+  START TRANSACTION 或 BEGIN；
+  ```
+
+- 提交事务
+
+  ```sql
+  COMMIT；
+  ```
+
+- 回滚事务
+
+  ```sql
+  ROLLBACK;
+  ```
+
+#### 事务的四大特性
+
+- 原子性 （Atomicity）: 事务是不可分割的最小操作单元，要么全部成功，要么全部失败。
+- 一致性 （Consistency）： 事务完成时，必须使所有的数据都保持一致状态。
+- 隔离性 （Isolation）： 数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行。
+- 持久性 （Durability）： 事务一旦提交或回滚，它对数据库中的数据的改变就是永久的。
+
+#### 并发事务问题
+
+问题：
+
+- 脏读： 一个事务读到另外一个事务还没有提交的数据。
+- 不可重复读： 一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读。
+- 幻读： 一个事务按照条件查询数据时，没有对应的数据行，戴氏在插入数据时，又发现这行数据已经存在，好像出现了幻影。
+
+#### 事务隔离级别
+
+- Read uncommitted
+
+  - 脏读 ✅
+  - 不可重复读 ✅
+  - 幻读 ✅
+
+- Read committed
+
+  - 脏读 ❌
+
+  - 不可重复读 ✅
+
+  - 幻读 ✅
+
+- Repeatable Read (默认)
+
+  - 脏读 ❌
+  - 不可重复读 ❌
+  - 幻读 ✅
+
+- Serializable
+
+  - 脏读 ❌
+  - 不可重复读 ❌
+  - 幻读 ❌
+
+查看事务隔离级别
+
+```sql
+SELECT @@TRANSACTION_ISOLATION;
+```
+
+设置事务隔离级别
+
+```sql
+SET [SESSION|GLOBAL] TRANSACTION ISONLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE};
+```
