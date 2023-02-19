@@ -54,7 +54,7 @@
 
 - InnoDB 存储引擎特点
 
-  ![逻辑存储结构](/Users/lidongyang/Learn/LearnNotes/Learning/img/InnoDB逻辑存储结构.png)
+  ![逻辑存储结构](../img/InnoDB逻辑存储结构.png)
 
 - MyISAM
   - 介绍
@@ -76,7 +76,7 @@
   - 文件
     - xxx.sdi: 存储表结构信息
 
-![存储引擎特点](/Users/lidongyang/Learn/LearnNotes/Learning/img/存储引擎特点.png)
+![存储引擎特点](../img/存储引擎特点.png)
 
 ##### 存储引擎选择
 
@@ -109,9 +109,9 @@
 
   - MySQL的索引是在存储引擎层实现的，不同的存储引擎有不同的结构，主要包含以下集中：
 
-  ![索引结构](/Users/lidongyang/Learn/LearnNotes/Learning/img/索引结构.png)
+  ![索引结构](../img/索引结构.png)
 
-​		![索引结构支持情况](/Users/lidongyang/Learn/LearnNotes/Learning/img/索引结构支持情况.png)
+​		![索引结构支持情况](../img/索引结构支持情况.png)
 
 我们平常所说的索引，如果没有特别指明，都是指B+树结构组织的索引。
 
@@ -121,7 +121,7 @@
 
 
 
-![二叉树](/Users/lidongyang/Learn/LearnNotes/Learning/img/二叉树.png)
+![二叉树](../img/二叉树.png)
 
 
 
@@ -137,7 +137,7 @@
 
      1. 树的度数指的是一个节点的子节点个数。
 
-![B-Tree](/Users/lidongyang/Learn/LearnNotes/Learning/img/B-Tree.png)
+![B-Tree](../img/B-Tree.png)
 
 ##### B+Tree
 
@@ -180,11 +180,11 @@ MySQL索引数据结构对经典的B+Tree进行了优化，在原B+Tree的基础
 
 - 索引分类
 
-  ![索引分类](/Users/lidongyang/Learn/LearnNotes/Learning/img/索引分类.png)
+  ![索引分类](../img/索引分类.png)
 
   - 在InnoDB存储引擎中，根据索引的存储形式，又可以分为以下两种：
 
-    ![InnoDB索引分类](/Users/lidongyang/Learn/LearnNotes/Learning/img/InnoDB索引分类.png)
+    ![InnoDB索引分类](../img/InnoDB索引分类.png)
 
      - 聚集索引选取规则
        - 如果存在主键，主键索引就是聚集索引。
